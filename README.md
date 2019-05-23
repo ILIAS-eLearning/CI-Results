@@ -1,4 +1,6 @@
 This is the official CI Repo for ILIAS.
+You can open the Dashboard here:
+https://ilias-elearning.github.io/CI-Results/
 
 ## Create encrypted key with github for Travis.
 * Login to github with the ci account
