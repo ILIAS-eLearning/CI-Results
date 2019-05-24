@@ -1,2 +1,2 @@
+https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/202785176,4589.1,6_0_0,php_7_2,PHP 7_2,1,1,13,4096,0,0,false,2019-05-24 09:19:42
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/202785177,4589.2,6_0_0,php_7_3,PHP 7_3,1,1,13,4096,0,0,false,2019-05-24 09:19:51
-https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/202821579,4590.1,6_0_0,php_7_2,PHP 7_2,1,1,13,4096,0,0,false,2019-05-24 11:44:29
