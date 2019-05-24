@@ -20,7 +20,7 @@ then
 	cp "$DICTO_PATH" "results/$FOLDER_DATE/dicto_$TRAVIS_BUILD_NUMBER_$DATE.txt"
 fi
 
-git pull
+git pull origin master
 git add . && git commit -m "$TRAVIS_BUILD_NUMBER - $DATE - $TRAVIS_EVENT_TYPE"
 git remote add results https://${ILIAS_VAR}@github.com/ILIAS-eLearning/CI-Results > /dev/null 2>&1
 git push --quiet --set-upstream results master
