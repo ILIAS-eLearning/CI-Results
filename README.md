@@ -3,7 +3,7 @@ You can open the Dashboard here:
 https://ilias-elearning.github.io/CI-Results/
 
 # How does this work
-The "travis.yml" triggers the "run_tests.sh" script in the ILIAS repository, which triggers the "run.sh" script in this repository
+The "travis.yml" triggers the "run_tests_with_reporting.sh" script in the ILIAS repository, which triggers the "run.sh" script in this repository
 
 ## Create encrypted key with github for Travis.
 * Login to Github with the ci account
