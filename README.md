@@ -12,6 +12,7 @@ The "travis.yml" triggers the "run_tests.sh" script in the ILIAS repository, whi
 * Ensure it has the code "public_repo"
 * Install the travis gem on your computer
 * Use the following command line to encrypt your personal access token (xyz)
+  * travis login --pro
   * travis encrypt --com -r ILIAS-eLearning/ILIAS ILIAS_VAR=xyz --add
   * Use "--add" to add your token automatically to the .travis.yml 
   * Commit your changes
