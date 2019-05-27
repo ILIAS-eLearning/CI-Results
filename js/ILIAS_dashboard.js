@@ -22,6 +22,8 @@ SimpleILIASDashboard = (function () {
       failed = '-warning';
     }
 
+    title = title.replace('_', '.');
+
     return '<a href="' + url + '" class="col-xl-4 col-lg-5" target="_blank"> ' +
             ' <div class="col-xl-12">' +
               ' <div class="card shadow mb-4" id="' + version + '_' + id + '_card">' +
@@ -146,20 +148,29 @@ SimpleILIASDashboard = (function () {
   };
 
   pro.compareByThird = function(first, second) {
-    let left = first.split(',');
-    let right = second.split(',');
-    if (left[2] < right[2]) {
+    let left = first.split(',')[2];
+    let right = second.split(',')[2];
+    if (left <= right) {
         return 1;
-    } else if (left[2] > right[2] ){
+    } else if (left > right ){
         return -1;
-    } else {
-        return 0;
+    }
+  }
+
+    pro.compareByJobId = function(first, second) {
+    let left = first.split(',')[1];
+    let right = second.split(',')[1];
+    if (left < right) {
+        return -1;
+    } else if (left >= right ){
+        return 1;
     }
   }
 
   pub.createPHPUnitWidgets = function (data) {
     let allRows = data.split(/\r?\n|\r/);
 
+    allRows.sort(pro.compareByJobId);
     allRows.sort(pro.compareByThird);
 
     $('.card-header').find('.badge-danger').remove();
