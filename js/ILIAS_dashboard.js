@@ -197,7 +197,7 @@ SimpleILIASDashboard = (function () {
         if( $('.phpunit_data').find('.' + version_string).length === 0) {
             let version_readable = version_string.replace(/_/g, ".");
             version_readable = version_readable.replace(/ILIAS\./g, "ILIAS ");
-            $('.phpunit_data').append('<div class="' + version_string + ' col-md-12"><h5>' + version_readable + '</h5></div>')
+            $('.phpunit_data').append('<div class="' + version_string + ' col-md-12 phpunit_refresh"><h5>' + version_readable + '</h5></div>')
         }
         $('.phpunit_data .' + version_string).append(pub.createPHPUnitWidget(url, version_string, job_id, id, title, warn, skip, incomp, risky, failed, failure, date));
 
@@ -240,6 +240,13 @@ SimpleILIASDashboard = (function () {
     let callback = pub.createPHPUnitWidgets;
     
     pro.getDataFile(url, callback);
+  };
+
+  pub.startPHPUnitRefreshtimer = function() {
+    let interval = setInterval(function () {
+                $('.phpunit_refresh').remove();
+      pub.getPHPUnitData();
+        }, 10000);
   };
 
   pub.getDictoData = function () {
