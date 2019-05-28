@@ -12,7 +12,8 @@ SimpleILIASDashboard = (function () {
       phpunit_state_html      : '<p class="mr-2"><i class="fas fa-circle',
       dicto_state_html        : '<span class=""><a class="badge badge-pill',
       card_header_html_begin  : '<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">'
-    }
+    },
+    phpunit_refresh : false
   };
 
   pub.createPHPUnitWidget = function (url, version, job_id, id, title, warn, skip, incomp, risky, fail, failure, date) {
@@ -244,9 +245,25 @@ SimpleILIASDashboard = (function () {
 
   pub.startPHPUnitRefreshtimer = function() {
     let interval = setInterval(function () {
-                $('.phpunit_refresh').remove();
-      pub.getPHPUnitData();
-        }, 10000);
+          $('.phpunit_refresh').remove();
+          pub.getPHPUnitData();
+          if(pri.phpunit_refresh === false) {
+            clearInterval(interval);
+          }
+        }, 30000);
+  };
+
+   pub.appendSwitcherEvent = function() {
+     $( ".phpunit_toogle" ).off( "mousedown");
+      $( ".phpunit_toogle" ).on( "mousedown", function() {
+        if(pri.phpunit_refresh === false) {
+          pri.phpunit_refresh = true;
+          pub.startPHPUnitRefreshtimer();
+        } else {
+          pri.phpunit_refresh = false;
+        }
+        console.log(pri.phpunit_refresh)
+    });
   };
 
   pub.getDictoData = function () {
@@ -320,7 +337,6 @@ $( document ).ready(function() {
     SimpleILIASDashboard.getPHPUnitData();
     SimpleILIASDashboard.getDictoData();
     SimpleILIASDashboard.appendChartJSExtensionForCenterText();
+    SimpleILIASDashboard.appendSwitcherEvent();
     $('body').scrollspy({ target: '#nav_list' });
-
-
 });
