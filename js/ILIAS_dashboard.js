@@ -17,8 +17,16 @@ SimpleILIASDashboard = (function () {
     phpunit_refresh_handle:    null
   }
 
-  pub.createPHPUnitWidget = function (url, version, job_id, id, title, warn, skip, incomp, risky, fail, failure, date) {
-    let failed = ''
+  pub.createPHPUnitWidget = function (url, version, job_id, id, title, warn, skip, incomp, risky, fail, failure, date, timestamp) {
+    let failed = '', formatted_date = timestamp !== undefined ? new Intl.DateTimeFormat('default', {
+      weekday: 'long',
+      year:    'numeric',
+      month:   'long',
+      day:     'numeric',
+      hour:    'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    }).format(new Date(timestamp * 1000)) : date
 
     if (failure === 'true') {
       failed = '-warning'
@@ -49,7 +57,7 @@ SimpleILIASDashboard = (function () {
       ' </div>' +
       ' </div>' +
       ' </div>' +
-      ' </div><span class="date_footer small">' + date + '</span>' +
+      ' </div><span class="date_footer small">' + formatted_date + '</span>' +
       ' </div>' +
       ' </div>' +
       ' </a>'
@@ -178,19 +186,20 @@ SimpleILIASDashboard = (function () {
     for (let singleRow = 0; singleRow < allRows.length; singleRow++) {
       let cells = allRows[singleRow].split(',')
       if (cells.length > 1) {
-        let url      = cells[0],
-            job_id   = cells[1],
-            version  = cells[2],
-            id       = cells[3],
-            title    = cells[4],
-            warn     = cells[5],
-            skip     = cells[6],
-            incomp   = cells[7],
-            complete = cells[8],
-            failed   = cells[9],
-            risky    = cells[10],
-            failure  = cells[11],
-            date     = cells[12]
+        let url       = cells[0],
+            job_id    = cells[1],
+            version   = cells[2],
+            id        = cells[3],
+            title     = cells[4],
+            warn      = cells[5],
+            skip      = cells[6],
+            incomp    = cells[7],
+            complete  = cells[8],
+            failed    = cells[9],
+            risky     = cells[10],
+            failure   = cells[11],
+            date      = cells[12],
+            timestamp = cells[13]
         let version_string = 'ILIAS_' + version
         console.log(cells)
 
@@ -199,7 +208,7 @@ SimpleILIASDashboard = (function () {
           version_readable = version_readable.replace(/ILIAS\./g, 'ILIAS ')
           $('.phpunit_data').append('<div class="' + version_string + ' col-md-12 phpunit_refresh"><h5>' + version_readable + '</h5></div>')
         }
-        $('.phpunit_data .' + version_string).append(pub.createPHPUnitWidget(url, version_string, job_id, id, title, warn, skip, incomp, risky, failed, failure, date))
+        $('.phpunit_data .' + version_string).append(pub.createPHPUnitWidget(url, version_string, job_id, id, title, warn, skip, incomp, risky, failed, failure, date, timestamp))
 
         let interval = setInterval(function () {
           SimpleILIASDashboard.replaceLoaderSymbolForPHPUnitCard(version_string + '_' + id + '_card', failure, warn, skip, incomp, risky, failed, complete)
