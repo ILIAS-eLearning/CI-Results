@@ -32,5 +32,5 @@ git add . && git commit -m "$TRAVIS_BUILD_NUMBER - $DATE - $TRAVIS_EVENT_TYPE"
 git push --quiet --set-upstream results master
 if [ "$?" -ne 0 ]
 then
-	git pull && git push --quiet --set-upstream results master
+	git pull --no-edit && git push --quiet --set-upstream results master
 fi
