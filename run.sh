@@ -23,6 +23,7 @@ fi
 
 if [ -e "$PHPFIX_RESULTS_PATH" ]
 then
+	cp "$PHPFIX_RESULTS_PATH" "data/phpfix_results.json"
 	cp "$PHPFIX_RESULTS_PATH" "results/$FOLDER_DATE/phpfix_$TRAVIS_BUILD_NUMBER_$DATE.json"
 fi
 
