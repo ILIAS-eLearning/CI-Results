@@ -244,15 +244,9 @@ SimpleILIASDashboard = (function () {
 		let json = JSON.parse(data);
 		json.files.sort();
 		let obj = pro.buildTreeFromPaths(json.files);
-		let list = [];
-		$(obj).each(function(idx, item){
-			list.push({
-				href: $(item).attr('href'),
-				text: item.textContent
-			});
-		});
-		console.log(list)
-		console.log(obj)
+
+console.log(obj)
+
 	};
 
 	pro.buildTreeFromPaths = function (data) {
