@@ -245,8 +245,11 @@ SimpleILIASDashboard = (function () {
 		json.files.sort();
 		let obj = pro.buildTreeFromPaths(json.files);
 
-console.log(obj)
+		console.log(obj)
 
+		$('.php-cs-fixer-data').jstree({ 'core' : {
+				'data' : obj
+			} });
 	};
 
 	pro.buildTreeFromPaths = function (data) {
