@@ -101,38 +101,52 @@ SimpleILIASDashboard = (function () {
       backgroundColor = pri.background_colors_fail
     }
 
-    card_object.append(
-      '<script>' +
-      '$( document ).ready(function() {' +
-      'let ctx = document.getElementById("' + card_cleaned_id + '");' +
-      'let myPieChart = new Chart(ctx, {' +
-      'type: "doughnut", data: ' +
-      '{ ' +
+  
+    let head =  '<script>' +
+                '$( document ).ready(function() {' +
+                'let ctx = document.getElementById("' + card_cleaned_id + '");' +
+                'let myPieChart = new Chart(ctx, {' +
+                'type: "doughnut", data: ';
+   let tail = '},' +
+              'options: {' +
+              'elements: ' +
+              '{' +
+              'center: {' +
+              'text: "Tests: ' + complete + '",color: "#212529", fontStyle: "Helvetica", sidePadding: 20 ' +
+              '}' +
+              '}, ' +
+              'maintainAspectRatio: false,' +
+              'tooltips:' +
+              '{backgroundColor: "#0059ff",bodyFontColor:"#ffffff",borderColor: "#dddfeb",' +
+              'borderWidth: 1,xPadding: 15,yPadding: 15,displayColors: false,caretPadding: 10,' +
+              'bodyFontFamily: "sans-serif",},' +
+              'legend: {display: false},cutoutPercentage: 60,},' +
+              '});' +
+              '});' +
+              '</script>';
+
+  let middle = '{ ' +
       'labels: ["Warnings", "Skipped", "Incomplete", "Risky", "Failed"],' +
       'datasets: [' +
       '{data: [ ' + warn + ', ' + skip + ', ' + incomp + ', ' + risky + ' , ' + failed + '], ' +
       'backgroundColor: ' + backgroundColor + ',' +
       'hoverBackgroundColor: ["#ffa500","#ffa500","#ffa500","#ffa500"],' +
       'hoverBorderColor: "rgba(234, 236, 244, 1)"' +
-      '}],' +
-      '},' +
-      'options: {' +
-      'elements: ' +
-      '{' +
-      'center: {' +
-      'text: "Tests: ' + complete + '",color: "#212529", fontStyle: "Helvetica", sidePadding: 20 ' +
-      '}' +
-      '}, ' +
-      'maintainAspectRatio: false,' +
-      'tooltips:' +
-      '{backgroundColor: "#0059ff",bodyFontColor:"#ffffff",borderColor: "#dddfeb",' +
-      'borderWidth: 1,xPadding: 15,yPadding: 15,displayColors: false,caretPadding: 10,' +
-      'bodyFontFamily: "sans-serif",},' +
-      'legend: {display: false},cutoutPercentage: 60,},' +
-      '});' +
-      '});' +
-      '</script>')
+      '}],';
+      console.log( warn == 0 , skip == 0 , incomp == 0 , risky == 0 , failed == 0 )
+  if ( warn == 0 && skip == 0 && incomp == 0 && risky == 0 && failed == 0 ) {
+      middle = '{ ' +
+      'labels: ["Complete"],' +
+      'datasets: [' +
+      '{data: [ 100], ' +
+      'backgroundColor: ["#36d64e"],' +
+      'hoverBackgroundColor: ["#ffa500"],' +
+      'hoverBorderColor: "rgba(234, 236, 244, 1)"' +
+      '}],';
+  }
 
+    card_object.append( head + middle + tail )
+      
   }
 
   pub.replaceLoaderSymbolForPHPUnitCard = function (card_id, failure, warn, skip, incomp, risky, failed, complete) {
