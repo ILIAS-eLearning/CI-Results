@@ -133,16 +133,8 @@ SimpleILIASDashboard = (function () {
       'hoverBackgroundColor: ["#ffa500","#ffa500","#ffa500","#ffa500"],' +
       'hoverBorderColor: "rgba(234, 236, 244, 1)"' +
       '}],';
-      console.log( warn == 0 , skip == 0 , incomp == 0 , risky == 0 , failed == 0 )
   if ( warn == 0 && skip == 0 && incomp == 0 && risky == 0 && failed == 0 ) {
-      middle = '{ ' +
-      'labels: ["Complete"],' +
-      'datasets: [' +
-      '{data: [ 100], ' +
-      'backgroundColor: ["#36d64e"],' +
-      'hoverBackgroundColor: ["#ffa500"],' +
-      'hoverBorderColor: "rgba(234, 236, 244, 1)"' +
-      '}],';
+      middle = '{ labels: ["Complete"], datasets: [ {data: [ ' + complete + '], backgroundColor: ["#36d64e"], hoverBackgroundColor: ["#ffa500"],hoverBorderColor: "rgba(234, 236, 244, 1)"}],';
   }
 
     card_object.append( head + middle + tail )
