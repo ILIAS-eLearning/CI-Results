@@ -288,8 +288,13 @@ SimpleILIASDashboard = (function() {
     $('#phpfixData .card-body').append(data);
   };
 
+  pub.createPHPFixQuickWidgets = function(data) {
+    console.log(data)
+    $('.phpfix-data p').append('Errors are detected in ' +  data + ' classes.');
+  };
+
   pub.anErrorOccured = function() {
-    location.reload();
+    //location.reload();
   };
 
   pub.getPHPUnitData = function() {
@@ -330,6 +335,13 @@ SimpleILIASDashboard = (function() {
   pub.getPHPFixData = function() {
     let url = 'data/phpfix_results';
     let callback = pub.createPHPFixWidgets;
+
+    pro.getDataFile(url, callback);
+  };
+  
+  pub.getPHPFixQuickLoadData = function() {
+    let url = 'data/phpfix_short_results';
+    let callback = pub.createPHPFixQuickWidgets;
 
     pro.getDataFile(url, callback);
   };
@@ -398,7 +410,7 @@ $(document).ready(function() {
   $('.card-header').find('.badge-danger').remove();
   SimpleILIASDashboard.getPHPUnitData();
   SimpleILIASDashboard.getDictoData();
-
+  SimpleILIASDashboard.getPHPFixQuickLoadData();
   $('#phpfixLoadData').on('click', function() {
     SimpleILIASDashboard.getPHPFixData();
     $('#phpfixLoadData').off('click');
