@@ -2,6 +2,7 @@
 DICTO_PATH="/tmp/dicto_latest.csv"
 PHPUNIT_PATH="/tmp/phpunit_latest.csv"
 PHPFIX_RESULTS_PATH="/tmp/phpfix_results"
+PHPFIX_RESULTS_SHORT_PATH="/tmp/phpfix_short_results"
 
 DATE=`date '+%Y-%m-%d-%H:%M:%S'`
 FOLDER_DATE=`date '+%Y-%m'`
@@ -24,6 +25,9 @@ fi
 if [ -e "$PHPFIX_RESULTS_PATH" ]
 then
 	cp "$PHPFIX_RESULTS_PATH" "results/$FOLDER_DATE/phpfix_$TRAVIS_BUILD_NUMBER_$DATE.txt"
+	SHORT_RESULT_WC=`wc -l $PHPFIX_RESULTS_PATH | awk '{ print $1 }'` 
+	let SHORT_RESULT=SHORT_RESULT_WC-2
+	echo $SHORT_RESULT > "PHPFIX_RESULTS_SHORT_PATH"
 fi
 
 git remote add results https://${ILIAS_VAR}@github.com/ILIAS-eLearning/CI-Results > /dev/null 2>&1
