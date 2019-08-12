@@ -2,7 +2,7 @@
 DICTO_PATH="/tmp/dicto_latest.csv"
 PHPUNIT_PATH="/tmp/phpunit_latest.csv"
 PHPFIX_RESULTS_PATH="/tmp/phpfix_results"
-PHPFIX_RESULTS_SHORT_PATH="/tmp/phpfix_short_results"
+PHPFIX_RESULTS_SHORT_PATH="data/phpfix_short_results"
 
 DATE=`date '+%Y-%m-%d-%H:%M:%S'`
 FOLDER_DATE=`date '+%Y-%m'`
