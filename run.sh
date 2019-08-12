@@ -27,7 +27,7 @@ then
 	cp "$PHPFIX_RESULTS_PATH" "results/$FOLDER_DATE/phpfix_$TRAVIS_BUILD_NUMBER_$DATE.txt"
 	SHORT_RESULT_WC=`wc -l $PHPFIX_RESULTS_PATH | awk '{ print $1 }'` 
 	let SHORT_RESULT=SHORT_RESULT_WC-2
-	echo $SHORT_RESULT > "PHPFIX_RESULTS_SHORT_PATH"
+	echo $SHORT_RESULT > "$PHPFIX_RESULTS_SHORT_PATH"
 fi
 
 git remote add results https://${ILIAS_VAR}@github.com/ILIAS-eLearning/CI-Results > /dev/null 2>&1
