@@ -283,6 +283,7 @@ SimpleILIASDashboard = (function() {
 
   pub.createPHPFixWidgets = function(data) {
     data = data.replace(/\n/g, '<br>');
+    data = data.replace(/CI\/PHP-CS-Fixer\/..\/..\//g, '');
     $('#phpfixData .card-body').html('');
     $('#phpfixData .card-body').append(data);
   };
