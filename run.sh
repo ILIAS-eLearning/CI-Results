@@ -15,16 +15,19 @@ fi
 if [ -e "$PHPUNIT_PATH" ]
 then
 	cp "$PHPUNIT_PATH" "results/$FOLDER_DATE/phpunit_$TRAVIS_BUILD_NUMBER_$DATE.txt"
+	rm "$PHPUNIT_PATH"
 fi
 
 if [ -e "$DICTO_PATH" ]
 then
 	cp "$DICTO_PATH" "results/$FOLDER_DATE/dicto_$TRAVIS_BUILD_NUMBER_$DATE.txt"
+	rm "$DICTO_PATH"
 fi
 
 if [ -e "$PHPFIX_RESULTS_PATH" ]
 then
 	cp "$PHPFIX_RESULTS_PATH" "results/$FOLDER_DATE/phpfix_$TRAVIS_BUILD_NUMBER_$DATE.txt"
+	rm "$PHPFIX_RESULTS_PATH"
 	SHORT_RESULT_WC=`wc -l $PHPFIX_RESULTS_PATH | awk '{ print $1 }'` 
 	if [ $SHORT_RESULT_WC -gt 2 ]
 	then
