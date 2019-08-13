@@ -1,8 +1,11 @@
 #!/bin/bash
+DICTO_PATH="/tmp/dicto_latest.csv"
+PHPUNIT_PATH="/tmp/phpunit_latest.csv"
+PHPFIX_RESULTS_PATH="/tmp/phpfix_results"
+PHPFIX_RESULTS_SHORT_PATH="data/phpfix_short_results"
 
-source CI/Import/Functions.sh
-source CI/Import/Variables.sh
-
+DATE=`date '+%Y-%m-%d-%H:%M:%S'`
+FOLDER_DATE=`date '+%Y-%m'`
 
 if [ ! -d "results/$FOLDER_DATE" ]
 then
