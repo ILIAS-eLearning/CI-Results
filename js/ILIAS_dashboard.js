@@ -291,6 +291,7 @@ SimpleILIASDashboard = (function() {
   pub.createPHPFixQuickWidgets = function(data) {
     console.log(data)
     $('.phpfix-data p').append('Errors are detected in ' +  data + ' classes.');
+    $('.phpfix-data p').prepend('<a href="https://ilias-elearning.github.io/CI-Results/data/phpfix_results">Download data</a></br>');
   };
 
   pub.anErrorOccured = function() {
