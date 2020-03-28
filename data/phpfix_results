@@ -53,4 +53,4 @@
   53) CI/PHP-CS-Fixer/../../Services/Init/classes/class.ilInitialisation.php (method_argument_space)
   54) CI/PHP-CS-Fixer/../../tests/UI/Component/Input/Field/FileInputTest.php (method_argument_space)
 
-Checked all files in 194.155 seconds, 340.000 MB memory used
+Checked all files in 378.584 seconds, 342.000 MB memory used
