@@ -67,4 +67,4 @@
   67) CI/PHP-CS-Fixer/../../Services/Object/classes/class.ilObjectActivation.php (binary_operator_spaces)
   68) CI/PHP-CS-Fixer/../../tests/UI/Component/Input/Field/FileInputTest.php (method_argument_space)
 
-Checked all files in 210.367 seconds, 338.000 MB memory used
+Checked all files in 350.702 seconds, 340.000 MB memory used
