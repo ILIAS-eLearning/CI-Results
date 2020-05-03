@@ -87,4 +87,4 @@
   87) CI/PHP-CS-Fixer/../../src/UI/Implementation/Component/Input/Container/Factory.php (return_type_declaration)
   88) CI/PHP-CS-Fixer/../../tests/UI/Component/Input/Field/FileInputTest.php (method_argument_space)
 
-Checked all files in 209.758 seconds, 340.000 MB memory used
+Checked all files in 391.716 seconds, 340.000 MB memory used
