@@ -111,4 +111,4 @@
  111) CI/PHP-CS-Fixer/../../tests/GlobalScreen/MainMenu/MapTest.php (braces, binary_operator_spaces)
  112) CI/PHP-CS-Fixer/../../tests/UI/Component/Input/Field/FileInputTest.php (method_argument_space)
 
-Checked all files in 196.804 seconds, 342.000 MB memory used
+Checked all files in 405.588 seconds, 340.000 MB memory used
