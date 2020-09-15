@@ -23,9 +23,9 @@ https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/375744596,11747.1,5_3_22,php_7_
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/379867279,11827.2,5_4_16,php_7_1,PHP 7_1,3,1,13,3641,0,0,false,2020-09-01 12:12:11,1598962331
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/380364803,11851.3,5_4_16,php_7_2,PHP 7_2,3,1,13,3641,0,0,false,2020-09-02 15:17:56,1599059876
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/380364801,11851.1,5_4_16,php_7_0,PHP 7_0,3,1,13,3641,0,0,false,2020-09-02 15:18:06,1599059886
-https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384581120,11992.3,5_4_17,php_7_2,PHP 7_2,3,1,13,3641,0,0,false,2020-09-14 11:29:07,1600082947
-https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384592797,11997.2,5_4_17,php_7_1,PHP 7_1,3,1,13,3641,0,0,false,2020-09-14 12:08:02,1600085282
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384593155,11998.2,5_3_23,php_7_1,PHP 7_1,0,9,28,2310,0,0,false,2020-09-14 12:09:46,1600085386
 https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384593154,11998.1,5_3_23,php_7_0,PHP 7_0,0,9,28,2310,0,0,false,2020-09-14 12:10:01,1600085401
-https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384593707,11999.1,5_4_17,php_7_0,PHP 7_0,3,1,13,3641,0,0,false,2020-09-14 12:10:07,1600085407
-https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384669123,12007.1,6_4,php_7_2,PHP 7_2,0,0,0,4821,0,0,false,2020-09-14 15:17:07,1600096627
+https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384936569,12010.2,5_4_17,php_7_1,PHP 7_1,3,1,13,3643,0,0,false,2020-09-15 06:20:02,1600150802
+https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384939489,12013.3,5_4_17,php_7_2,PHP 7_2,3,1,13,3688,0,0,false,2020-09-15 06:33:46,1600151626
+https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384939487,12013.1,5_4_17,php_7_0,PHP 7_0,3,1,13,3688,0,0,false,2020-09-15 06:33:55,1600151635
+https://travis-ci.com/ILIAS-eLearning/ILIAS/jobs/384947481,12015.1,6_4,php_7_2,PHP 7_2,0,0,0,4823,0,0,false,2020-09-15 07:04:02,1600153442
