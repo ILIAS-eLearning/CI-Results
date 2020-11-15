@@ -752,4 +752,4 @@
  752) CI/PHP-CS-Fixer/../../tests/UI/Renderer/ilIndependentTemplate.php (method_argument_space)
  753) CI/PHP-CS-Fixer/../../tests/UI/Base.php (method_argument_space)
 
-Checked all files in 399.410 seconds, 496.000 MB memory used
+Checked all files in 395.612 seconds, 484.000 MB memory used
